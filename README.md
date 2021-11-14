@@ -1,6 +1,6 @@
 ## SWORD-IO 
 Creator : [@nathan](https://github.com/ZeroChanBot)
-Demo : [Click Here](https://sword-game.herokuapp.com
+Demo : [Click Here](https://sword-game.herokuapp.com)
 
 
 ## SUPPORT ME WITH
