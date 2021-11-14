@@ -83,7 +83,7 @@ app.use('/:file', (req, res, next) => {
   if (req.params.file == 'main.js') {
     res.set('Content-Type', 'text/javascript');
     res.send(mainjs);
-  } else if (['index.html', 'textbox.html', 'main.js.map', 'promo.html'].includes(req.params.file)) {
+  } else if (['index.html', 'textbox.html', 'main.js.map'].includes(req.params.file)) {
     res.sendFile(__dirname + '/dist/' + req.params.file);
   } else {
     next();
@@ -117,7 +117,7 @@ io.on('connection', async (socket) => {
   if (moderation.bannedIps.includes(socket.ip)) {
     socket.emit(
       'ban',
-      'You are banned. Appeal to gautamgxtv@gmail.com<br><br>BANNED IP: ' +
+      'You are banned. Appeal to nathanaelhananta09@gmail.com<br><br>BANNED IP: ' +
         socket.ip
     );
     socket.disconnect();
@@ -154,7 +154,7 @@ io.on('connection', async (socket) => {
     if (!captchatoken && recaptcha) {
       socket.emit(
         'ban',
-        'You were kicked for not sending a captchatoken. Send this message to gautamgxtv@gmail.com if you think this is a bug.'
+        'You were kicked for not sending a captchatoken. Send this message to nathanaelhananta09@gmail.com if you think this is a bug.'
       );
       return socket.disconnect();
     }
@@ -165,7 +165,7 @@ io.on('connection', async (socket) => {
     if (PlayerList.has(socket.id)) {
       socket.emit(
         'ban',
-        'You were kicked for 2 players on 1 id. Send this message to gautamgxtv@gmail.com<br> In the meantime, try restarting your computer if this happens a lot. '
+        'You were kicked for 2 players on 1 id. Send this message to nathanaelhananta09@gmail.com<br> In the meantime, try restarting your computer if this happens a lot. '
       );
       return socket.disconnect();
     }
@@ -194,7 +194,7 @@ io.on('connection', async (socket) => {
         if (f.score < 0.3) {
           socket.emit(
             'ban',
-            `Captcha score too low: ${f.score}<br><br>If you're using a vpn, disable it. <br>If your on incognito, go onto a normal window<br>If your not signed in to a google account, sign in<br><br>If none of these worked, contact gautamgxtv@gmail.com`
+            `Captcha score too low: ${f.score}<br><br>If you're using a vpn, disable it. <br>If your on incognito, go onto a normal window<br>If your not signed in to a google account, sign in<br><br>If none of these worked, contact nathanaelhananta09@gmail.com`
           );
           socket.disconnect();
           return;
